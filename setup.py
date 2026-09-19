@@ -24,7 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'wall_approach = in_class_day05.wall_approach:main'
+            'wall_follow = in_class_day05.wall_follow:main'
         ],
     },
 )

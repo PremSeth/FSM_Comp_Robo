@@ -20,15 +20,15 @@ ros2 launch ros_behaviors_fsm bar_world.py
 Run one controller at a time in another sourced terminal:
 
 ```bash
-ros2 run ros_behaviors_fsm fsm_controller --ros-args -p use_sim_time:=true
+ros2 run ros_behaviors_fsm fsm_controller
 ```
 
 The standalone alternatives are:
 
 ```bash
-ros2 run ros_behaviors_fsm wall_follow --ros-args -p use_sim_time:=true
-ros2 run ros_behaviors_fsm bump_protocol --ros-args -p use_sim_time:=true
-ros2 run ros_behaviors_fsm drive_spiral --ros-args -p use_sim_time:=true
+ros2 run ros_behaviors_fsm wall_follow
+ros2 run ros_behaviors_fsm bump_protocol
+ros2 run ros_behaviors_fsm drive_spiral
 ```
 
 The standalone wall-follow behavior is the version recorded in `broken_wall_follow`; moving it here does not fix its navigation behavior. Bump and spiral retain their original wall-clock sleep timing.

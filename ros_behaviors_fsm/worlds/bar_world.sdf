@@ -157,7 +157,7 @@
         </inertial>
         <enable_wind>false</enable_wind>
       </link>
-      <pose>2.3771598339080811 -1.0449994802474976 0.57150000333786011 0 0 -1.5708000357176291</pose>
+      <pose>4.3771598339080811 -1.0449994802474976 0.57150000333786011 0 0 -1.5708000357176291</pose>
       <self_collide>false</self_collide>
     </model>
     <model name='barrier_center'>
@@ -166,7 +166,7 @@
         <visual name='visual'>
           <geometry>
             <box>
-              <size>4.0654199999999996 0.30630000000000002 1.143</size>
+              <size>8.06542 0.30630000000000002 1.143</size>
             </box>
           </geometry>
           <material>
@@ -178,7 +178,7 @@
         <collision name='collision'>
           <geometry>
             <box>
-              <size>4.0654199999999996 0.30630000000000002 1.143</size>
+              <size>8.06542 0.30630000000000002 1.143</size>
             </box>
           </geometry>
           <surface>
@@ -269,7 +269,7 @@
         </inertial>
         <enable_wind>false</enable_wind>
       </link>
-      <pose>-1.3705070018768311 -1.1272494792938232 0.57150000333786011 0 0 1.5708000357176291</pose>
+      <pose>-3.3705070018768311 -1.1272494792938232 0.57150000333786011 0 0 1.5708000357176291</pose>
       <self_collide>false</self_collide>
     </model>
     <model name='barrier_bottom'>
@@ -278,7 +278,7 @@
         <visual name='visual'>
           <geometry>
             <box>
-              <size>4.0654199999999996 0.30630000000000002 1.143</size>
+              <size>8.06542 0.30630000000000002 1.143</size>
             </box>
           </geometry>
           <material>
@@ -290,7 +290,7 @@
         <collision name='collision'>
           <geometry>
             <box>
-              <size>4.0654199999999996 0.30630000000000002 1.143</size>
+              <size>8.06542 0.30630000000000002 1.143</size>
             </box>
           </geometry>
           <surface>

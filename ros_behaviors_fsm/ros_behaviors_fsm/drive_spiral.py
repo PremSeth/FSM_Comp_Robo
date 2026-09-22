@@ -1,5 +1,5 @@
 """
-Draw Star
+Draw Spiral
 --------
 This node encapsulates implements a simple time-based approach to driving the
 robot in a sprial shape.  The system makes use of a a special ``estop`` topic that
@@ -69,23 +69,23 @@ class DrawSpiral(Node):
     def l_spiral(self):
         """Execute spiral motion with a linear velocity of .2 m/s
         """
-        distance = math.pi # circumference of large semicircle
-        time_driving = distance/.2 # time = distance / velocity
+        distance = .2*math.pi # circumference of large semicircle
+        time_driving = distance/.5 # time = distance / velocity
 
         angular_vel = math.pi/time_driving # angular velocity to complete the large semicircle in the time_driving
         if not self.e_stop.is_set():
-            self.drive(linear=0.2, angular=angular_vel)
+            self.drive(linear=0.5, angular=angular_vel)
             sleep(time_driving)
             self.drive(linear=0.0, angular=0.0)
 
     def s_spiral(self):
         """Execute a short spiral motion
         """
-        distance = .5*math.pi # arc length of short spiral
-        time_driving = distance/.2 # time = distance / velocity
+        distance = .1*math.pi # arc length of short spiral
+        time_driving = distance/.5 # time = distance / velocity
         angular_vel = math.pi/time_driving # angular velocity to complete the short spiral in the time_driving
         if not self.e_stop.is_set():
-            self.drive(linear=0.2, angular=angular_vel)
+            self.drive(linear=0.5, angular=angular_vel)
             sleep(time_driving)
             self.drive(linear=0.0, angular=0.0)
 

@@ -1,3 +1,7 @@
+""" 
+Finite State Machine Controller for Neato Robot Navigation
+"""
+
 import math
 import rclpy
 from rclpy.node import Node
@@ -87,6 +91,7 @@ class FSMController(Node):
             self.drive()
             self.get_logger().info('Bump recovery finished')
             self.state = "SPIRAL"
+            print("Spiral state active")
             self.spiral_started_at = self.get_clock().now()
        
     def align(self): 
@@ -106,6 +111,7 @@ class FSMController(Node):
         self.vel_pub.publish(msg)
         
     def wall_follow(self, distance):
+        print("wall following")
         '''
         Follows the wall along its left side and drives backward
         '''
@@ -154,8 +160,7 @@ class FSMController(Node):
             self.drive(linear=0.5, angular=angular_vel)
         else:
             self.drive()
-            self.state = "FOLLOW"
-    
+            self.state = "FOLLOW"    
     
     
 

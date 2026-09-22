@@ -1,0 +1,420 @@
+<sdf version='1.9'>
+  <model name='neato_standalone'>
+    <link name='base_link'>
+      <pose>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.00959 -0 8e-06 0 -0 0</pose>
+        <mass>2.44131</mass>
+        <inertia>
+          <ixx>0.0246781</ixx>
+          <ixy>-1.03977e-21</ixy>
+          <ixz>1.82757e-06</ixz>
+          <iyy>0.0246891</iyy>
+          <iyz>-8.48244e-25</iyz>
+          <izz>0.0418184</izz>
+        </inertia>
+      </inertial>
+      <gravity>1</gravity>
+
+      <collision name='robot_bumpers'>
+        <geometry>
+          <box>
+            <size>0.321 0.335 0.01</size>
+          </box>
+        </geometry>
+        <pose>0 0 0.05 0 0 0</pose>
+      </collision>
+
+      <collision name='base_footprint_fixed_joint_lump__base_link_collision'>
+        <pose>-0.01 0 0.08 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.06</length>
+            <radius>0.15</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.0</mu>
+              <mu2>0.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__base_link_collision_1'>
+        <pose>0.08 0 0.08 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.16 0.3 0.06</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.0</mu>
+              <mu2>0.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__caster_back_left_link_collision_3'>
+        <pose>-0.11 0.09 0.02 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.0176</length>
+            <radius>0.01</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.01</mu>
+              <mu2>0.01</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__caster_back_right_link_collision_4'>
+        <pose>-0.11 -0.09 0.02 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.0176</length>
+            <radius>0.01</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.01</mu>
+              <mu2>0.01</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__caster_front_left_link_collision_5'>
+        <pose>0.08 0.075 0.02 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.0176</length>
+            <radius>0.01</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.01</mu>
+              <mu2>0.01</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__caster_front_right_link_collision_6'>
+        <pose>0.08 -0.075 0.02 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.0176</length>
+            <radius>0.01</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.01</mu>
+              <mu2>0.01</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      
+      <visual name='base_footprint_fixed_joint_lump__base_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://neato/meshes/main_body.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.3 0.3 0.3 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+        </material>
+      </visual>
+
+      <sensor name='bumpers' type='contact'>
+        <always_on>true</always_on>
+        <update_rate>10</update_rate>
+        <contact>
+          <collision>robot_bumpers</collision>
+        </contact>
+        <plugin filename="gz-sim-contact-system" name="gz::sim::systems::Contact">
+          <topic>/bumper</topic>
+        </plugin>
+      </sensor>
+
+      <sensor name='camera' type='camera'>
+        <update_rate>10</update_rate>
+        <topic>/camera/image</topic>
+        <camera name='camera'>
+          <horizontal_fov>1.39626</horizontal_fov>
+          <image>
+            <width>1024</width>
+            <height>768</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>300</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+        </camera>
+        <pose>-0.1 0 0.25 0 -0 0</pose>
+      </sensor>
+
+      <gravity>1</gravity>
+
+      <sensor name='imu_sensor' type='imu'>
+        <always_on>1</always_on>
+        <update_rate>100</update_rate>
+        <visualize>0</visualize>
+        <topic>/imu</topic>
+        <pose>0 0 0 0 -0 0</pose>
+      </sensor>
+
+      <sensor name='gpu_lidar' type='gpu_lidar'>
+        <always_on>1</always_on>
+        <update_rate>5</update_rate>
+        <topic>/scan</topic>
+          <gz_frame_id>base_laser_link</gz_frame_id>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>361</samples>
+              <resolution>1</resolution>
+              <min_angle>-3.14159</min_angle>
+              <max_angle>3.14159</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.1</min>
+            <max>5</max>
+            <resolution>1</resolution>
+          </range>
+        </ray>
+        <pose>-0.084 0 0.166 0 -0 -3.14159</pose>
+      </sensor>
+    </link>
+
+    <link name='wheel_left_link'>
+      <pose>0 0.1175 0.035 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel_left_link_collision'>
+        <pose>0 0 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.0206</length>
+            <radius>0.035</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.5</mu>
+              <mu2>1.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel_left_link_visual'>
+        <pose>0 0 0 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://neato/meshes/wheel.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.3 0.3 0.3 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+
+    <joint name='wheel_left_joint' type='revolute'>
+      <child>wheel_left_link</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0.15</damping>
+          <friction>0.7</friction>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name='wheel_right_link'>
+      <pose>0 -0.1175 0.035 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel_right_link_collision'>
+        <pose>0 0 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.0206</length>
+            <radius>0.035</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1.5</mu>
+              <mu2>1.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wheel_right_link_visual'>
+        <pose>0 0 0 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://neato/meshes/wheel.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.3 0.3 0.3 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+
+    <joint name='wheel_right_joint' type='revolute'>
+      <child>wheel_right_link</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0.15</damping>
+          <friction>0.7</friction>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <plugin name="gz::sim::systems::DiffDrive" filename="gz-sim-diff-drive-system">
+      <left_joint>wheel_left_joint</left_joint>
+      <right_joint>wheel_right_joint</right_joint>
+      <wheel_separation>0.235</wheel_separation>
+      <wheel_radius>0.035</wheel_radius>
+      <topic>/cmd_vel</topic>
+      <odom_topic>/odom</odom_topic>
+      <tf_topic>/model/neato_standalone/tf</tf_topic>
+      <frame_id>odom</frame_id>
+      <child_frame_id>base_link</child_frame_id>
+      <max_wheel_torque>8.0</max_wheel_torque>
+      <max_wheel_acceleration>50</max_wheel_acceleration>
+      <publish_odom>true</publish_odom>
+      <publish_tf>true</publish_tf>
+      <odom_publish_frequency>20</odom_publish_frequency>
+    </plugin>
+
+    <plugin name="gz::sim::systems::JointStatePublisher" filename="gz-sim-joint-state-publisher-system">
+      <topic>joint_states</topic>
+      <joint_name>wheel_left_joint</joint_name>
+      <joint_name>wheel_right_joint</joint_name>
+    </plugin>
+
+    <static>0</static>
+
+  </model>
+</sdf>

@@ -1,7 +1,5 @@
 # ROS behaviors FSM
 
-[Project writeup](https://docs.google.com/document/d/1coxiCGMOocB-7vDXaP9QN-EjGjESF1iph1r0ITvcFLs/edit?usp=sharing)
-
 One ROS 2 package containing the FSM, standalone behaviors, bar world, and recordings.
 
 Build from your ROS workspace, with the Neato and Gazebo dependencies installed:
@@ -40,3 +38,5 @@ ros2 bag play full_fsm
 ```
 
 Playback includes movement commands. Stop other controllers and disconnect physical robots before replaying. Playback does not reset the simulation world or pose.
+
+[Project writeup](https://docs.google.com/document/d/1coxiCGMOocB-7vDXaP9QN-EjGjESF1iph1r0ITvcFLs/edit?usp=sharing)

@@ -28,6 +28,9 @@ setup(
     entry_points={
         'console_scripts': [
             'fsm_controller = ros_behaviors_fsm.finite_state_controller:main',
+            'wall_follow = ros_behaviors_fsm.wall_follow:main',
+            'bump_protocol = ros_behaviors_fsm.bump_protocol:main',
+            'drive_spiral = ros_behaviors_fsm.drive_spiral:main',
         ],
     },
 )
